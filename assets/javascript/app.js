@@ -67,7 +67,6 @@ database.ref("/trains").on("child_added", function(snapshot) {
             $(this).find("span").hide();
         });
 
-    // STARTED BONUS TO REMOVE ITEMS ** not finished **
     $("#table-data").on("click", "tr span", function() {
         console.log(this);
         var trainRef = database.ref("/trains/");
