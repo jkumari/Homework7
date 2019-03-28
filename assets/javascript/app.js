@@ -1,11 +1,3 @@
-////////////////////////////////////////////////////////
-////////////////////  TRAIN        ////////////////////
-///////////////////      SCHEDULE ////////////////////
-/////////////////////////////////////////////////////
-
-
-
-// Global Variables
 var trainName = "";
 var trainDestination = "";
 var trainTime = "";
@@ -13,10 +5,10 @@ var trainFrequency = "";
 var nextArrival = "";
 var minutesAway = "";
 
-// jQuery global variables
+
 var elTrain = $("#train-name");
 var elTrainDestination = $("#train-destination");
-// form validation for Time using jQuery Mask plugin
+
 var elTrainTime = $("#train-time").mask("00:00");
 var elTimeFreq = $("#time-freq").mask("00");
 
@@ -33,12 +25,10 @@ var config = {
 
 firebase.initializeApp(config);
 
-// Assign the reference to the database to a variable named 'database'
 var database = firebase.database();
 
 database.ref("/trains").on("child_added", function(snapshot) {
 
-    //  create local variables to store the data from firebase
     var trainDiff = 0;
     var trainRemainder = 0;
     var minutesTillArrival = "";
